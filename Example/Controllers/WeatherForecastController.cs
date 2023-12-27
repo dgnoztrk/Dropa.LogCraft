@@ -6,7 +6,7 @@ namespace Example.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Controller : ControllerBase
+    public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -15,7 +15,7 @@ namespace Example.Controllers
 
         private readonly IAuditLogRepository<Audit> _auditLogRepository;
 
-        public Controller(IAuditLogRepository<Audit> auditLogRepository)
+        public WeatherForecastController(IAuditLogRepository<Audit> auditLogRepository)
         {
             _auditLogRepository = auditLogRepository;
         }
