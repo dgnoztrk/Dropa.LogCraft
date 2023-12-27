@@ -1,5 +1,4 @@
 using Example.Entity;
-using MongoDbAuditLog.AuditLogRepository.Abstract;
 using MongoDbAuditLog.MongoDbRepository;
 using MongoDbAuditLog.MongoDbRepository.Models;
 

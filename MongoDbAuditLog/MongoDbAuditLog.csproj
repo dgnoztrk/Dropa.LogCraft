@@ -4,6 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>Dropa.LogCraft.MongoDB</PackageId>
+    <Title>Dropa LogCraft MongoDB</Title>
+    <Authors>Doğan ÖZTÜRK</Authors>
+    <Description>MongoDb logger</Description>
+    <PackageProjectUrl>https://github.com/dgnoztrk/Dropa.LogCraft</PackageProjectUrl>
+    <PackageTags>Mongodb repository logger autolog mongolog</PackageTags>
+    <PackageReleaseNotes>first cm</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

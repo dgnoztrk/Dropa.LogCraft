@@ -6,30 +6,29 @@ namespace Example.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class Controller : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IAuditLogRepository<Audit> _aLog;
+        private readonly IAuditLogRepository<Audit> _auditLogRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IAuditLogRepository<Audit> aLog)
+        public Controller(IAuditLogRepository<Audit> auditLogRepository)
         {
-            _logger = logger;
-            _aLog = aLog;
+            _auditLogRepository = auditLogRepository;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<IEnumerable<WeatherForecast>> Get()
         {
-            await _aLog.Add(new Audit()
+            await _auditLogRepository.Add(new Audit()
             {
                 Descr = "Test Descr",
                 Title = "Test Title"
             });
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
